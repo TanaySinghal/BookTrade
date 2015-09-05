@@ -11,9 +11,11 @@ import UIKit
 class SellBookViewController: UIViewController {
 
     @IBOutlet weak var bookName: UITextField!
+    @IBOutlet weak var bookAuthor: UITextField!
     @IBOutlet weak var bookISBN: UITextField!
     @IBOutlet weak var bookCondition: UITextField!
     @IBOutlet weak var bookPrice: UITextField!
+    @IBOutlet weak var bookZipCode: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,16 +31,18 @@ class SellBookViewController: UIViewController {
 
     @IBAction func listBook(sender: AnyObject) {
         let name = bookName.text;
+        let author = bookAuthor.text;
         let ISBN = bookISBN.text;
         let condition = bookCondition.text;
         let price = bookPrice.text;
+        let zipCode = bookZipCode.text;
         
-        print("Name = \(name)");
+        /*print("Name = \(name)");
         print("Condition = \(condition)");
         print("ISBN = \(ISBN)");
-        print("Price = \(price)");
+        print("Price = \(price)");*/
         
-        if(name!.isEmpty || ISBN!.isEmpty || condition!.isEmpty || price!.isEmpty) {
+        if(name!.isEmpty || author!.isEmpty || ISBN!.isEmpty || condition!.isEmpty || price!.isEmpty || zipCode!.isEmpty) {
             displayAlertMessage("Fields cannot be empty");
             return;
         }
@@ -46,9 +50,9 @@ class SellBookViewController: UIViewController {
         let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:8888/BookTrade/ListBook.php")!)
         request.HTTPMethod = "POST"
         let postString1 = "seller_id=" + "1" + "&title=" + name!;
-        let postString2 = "&author=" + "lol";
+        let postString2 = "&author=" + author!;
         let postString3 = "&cost=" + price! + "&isbn=" + ISBN!;
-        let postString4 = "&book_condition=" + condition! + "&zip_code=" + "100";
+        let postString4 = "&book_condition=" + condition! + "&zip_code=" + zipCode!;
         let postString = postString1 + postString2 + postString3 + postString4;
         //TODO: Remove dollar sign from price
         //TODO: book_condition doesn't work
