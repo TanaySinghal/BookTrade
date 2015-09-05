@@ -331,16 +331,17 @@
                         <outlet property="bookName" destination="nBY-Vi-BMQ" id="BMh-LW-sSl"/>
                         <outlet property="bookPrice" destination="k2J-fW-Lhc" id="Yfv-NP-vQY"/>
                         <outlet property="bookZipCode" destination="Xme-en-xRR" id="4Y7-wZ-YVe"/>
+                        <segue destination="r1k-zw-34u" kind="show" identifier="TransitionFromSellBook" id="QcE-W7-E0F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8F3-7F-aog" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="862" y="1156"/>
         </scene>
-        <!--View Controller-->
+        <!--View Book View Controller-->
         <scene sceneID="6M1-Ta-5en">
             <objects>
-                <viewController id="r1k-zw-34u" sceneMemberID="viewController">
+                <viewController id="r1k-zw-34u" customClass="ViewBookViewController" customModule="BookTrade" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HLo-dv-vT4"/>
                         <viewControllerLayoutGuide type="bottom" id="K83-KA-cjb"/>

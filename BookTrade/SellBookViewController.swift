@@ -54,9 +54,8 @@ class SellBookViewController: UIViewController {
         let postString3 = "&cost=" + price! + "&isbn=" + ISBN!;
         let postString4 = "&book_condition=" + condition! + "&zip_code=" + zipCode!;
         let postString = postString1 + postString2 + postString3 + postString4;
-        //TODO: Remove dollar sign from price
-        //TODO: book_condition doesn't work
-        //TODO:
+        
+        //TODO: do not dismiss view.. go to buy book view
         print("PostString=\(postString)");
         
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
@@ -79,7 +78,9 @@ class SellBookViewController: UIViewController {
         var myAlert = UIAlertController(title:"Book listed", message:"Thank you", preferredStyle:UIAlertControllerStyle.Alert);
         
         let okAction = UIAlertAction(title:"OK", style:UIAlertActionStyle.Default) {
-            action in self.dismissViewControllerAnimated(true, completion:nil)
+            //TODO: Move to next page called "ViewBookViewController"
+            action in self.performSegueWithIdentifier("TransitionFromSellBook", sender: self);
+            //action in
         }
         
         myAlert.addAction(okAction);
