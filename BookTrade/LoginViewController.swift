@@ -44,16 +44,33 @@ class LoginViewController: UIViewController {
             
             do {
                 if let json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as? [[String:String]] {
-                    let email = json[0]["email"];
-                    let password = json[0]["password"];
+                    //Look through all email
                     
-                    if(userEmail == email) {
+                    var foundEmail:Bool = false;
+                    var password:String = "";
+                    
+                    for row in json {
+                        let email = row["email"];
+                        password = row["password"]!;
+                        if(userEmail == email) {
+                            foundEmail = true;
+                            break;
+                        }
+                    }
+                    
+                    if foundEmail == true {
                         if(userPassword == password) {
                             //Login is successful
                             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "isUserLoggedIn");
                             NSUserDefaults.standardUserDefaults().synchronize();
                             self.dismissViewControllerAnimated(true, completion:nil);
                         }
+                        else {
+                            print("Password not found");
+                        }
+                    }
+                    else {
+                        print("Email not found");
                     }
                 }
                 else {
