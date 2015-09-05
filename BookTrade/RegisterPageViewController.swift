@@ -46,11 +46,33 @@ class RegisterPageViewController: UIViewController {
             return;
         }
         
+        //Sending post request
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:8888/BookTrade/Register.php")!)
+        request.HTTPMethod = "POST"
+        let postString = "email=" + userEmail + "&name=" + userName + "&password=" + userPassword;
+        
+        print("PostString=\(postString)")
+        
+        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
+            data, response, error in
+            
+            if error != nil {
+                print("error=\(error)")
+                return
+            }
+            
+            //print("response = \(response)")
+            
+            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+            //print("responseString = \(responseString)")
+        }
+        task.resume()
         //Store data
-        NSUserDefaults.standardUserDefaults().setObject(userEmail, forKey: "userEmail");
+        /*NSUserDefaults.standardUserDefaults().setObject(userEmail, forKey: "userEmail");
         NSUserDefaults.standardUserDefaults().setObject(userName, forKey: "userName");
         NSUserDefaults.standardUserDefaults().setObject(userPassword, forKey: "userPassword");
-        NSUserDefaults.standardUserDefaults().synchronize();
+        NSUserDefaults.standardUserDefaults().synchronize();*/
         
         //Display message w/ confirmation
         var myAlert = UIAlertController(title:"Alert", message:"Registration successful", preferredStyle:UIAlertControllerStyle.Alert);
