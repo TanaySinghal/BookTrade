@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>AE09659B-D24E-4208-A34C-7D151A054E77</string>
+	<key>IDESourceControlProjectName</key>
+	<string>BookTrade</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>39E68E625E81ECF1DDF6B0B593702E39789E0EEE</key>
+		<string>https://github.com/TanaySinghal/BookTrade.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>BookTrade.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>39E68E625E81ECF1DDF6B0B593702E39789E0EEE</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/TanaySinghal/BookTrade.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>39E68E625E81ECF1DDF6B0B593702E39789E0EEE</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>39E68E625E81ECF1DDF6B0B593702E39789E0EEE</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BookTrade</string>
+		</dict>
+	</array>
+</dict>
+</plist>
