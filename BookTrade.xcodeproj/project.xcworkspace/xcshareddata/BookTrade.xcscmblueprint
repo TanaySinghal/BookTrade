@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "39E68E625E81ECF1DDF6B0B593702E39789E0EEE",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "39E68E625E81ECF1DDF6B0B593702E39789E0EEE" : 0,
+    "7F81773F14525891D61201879697450EAE29D1A0" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "AE09659B-D24E-4208-A34C-7D151A054E77",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "39E68E625E81ECF1DDF6B0B593702E39789E0EEE" : "BookTrade",
+    "7F81773F14525891D61201879697450EAE29D1A0" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "BookTrade",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "BookTrade.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/TanaySinghal\/BookTrade.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "39E68E625E81ECF1DDF6B0B593702E39789E0EEE"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/TanaySinghal\/BookTrade.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7F81773F14525891D61201879697450EAE29D1A0"
+    }
+  ]
+}
