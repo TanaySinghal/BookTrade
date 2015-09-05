@@ -1,19 +1,19 @@
 //
-//  RegisterPageViewController.swift
+//  SellBookViewController.swift
 //  BookTrade
 //
 //  Created by Tanay Singhal on 9/5/15.
-//  Copyright (c) 2015 BookTrade. All rights reserved.
+//  Copyright © 2015 BookTrade. All rights reserved.
 //
 
 import UIKit
 
-class RegisterPageViewController: UIViewController {
+class SellBookViewController: UIViewController {
 
-    @IBOutlet weak var userEmailTextField: UITextField!
-    @IBOutlet weak var userNameTextField: UITextField!
-    @IBOutlet weak var userPasswordTextField: UITextField!
-    @IBOutlet weak var repeatPasswordTextField: UITextField!
+    @IBOutlet weak var bookName: UITextField!
+    @IBOutlet weak var bookISBN: UITextField!
+    @IBOutlet weak var bookCondition: UITextField!
+    @IBOutlet weak var bookPrice: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,34 +26,34 @@ class RegisterPageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func registerButtonPressed(sender: AnyObject) {
-        print("Pressed register");
+
+    @IBAction func listBook(sender: AnyObject) {
+        let name = bookName.text;
+        let ISBN = bookISBN.text;
+        let condition = bookCondition.text;
+        let price = bookPrice.text;
         
-        let userEmail = userEmailTextField.text!;
-        let userName = userNameTextField.text!;
-        let userPassword = userPasswordTextField.text!;
-        let repeatPassword = repeatPasswordTextField.text!;
+        print("Name = \(name)");
+        print("Condition = \(condition)");
+        print("ISBN = \(ISBN)");
+        print("Price = \(price)");
         
-        //Check for empty fields
-        if(userEmail.isEmpty || userName.isEmpty || userPassword.isEmpty || repeatPassword.isEmpty) {
-            //Display alert message
-            displayAlertMessage("All fields are required");
+        if(name!.isEmpty || ISBN!.isEmpty || condition!.isEmpty || price!.isEmpty) {
+            displayAlertMessage("Fields cannot be empty");
             return;
         }
         
-        //Check if passwords match
-        if(userPassword != repeatPassword) {
-            //Display alert message
-            displayAlertMessage("Passwords do not match");
-            return;
-        }
-        
-        //Sending post request
-        let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:8888/BookTrade/Register.php")!)
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:8888/BookTrade/ListBook.php")!)
         request.HTTPMethod = "POST"
-        let postString = "email=" + userEmail + "&name=" + userName + "&password=" + userPassword;
-        
-        print("PostString=\(postString)")
+        let postString1 = "seller_id=" + "1" + "&title=" + name!;
+        let postString2 = "&author=" + "lol";
+        let postString3 = "&cost=" + price! + "&isbn=" + ISBN!;
+        let postString4 = "&book_condition=" + condition! + "&zip_code=" + "100";
+        let postString = postString1 + postString2 + postString3 + postString4;
+        //TODO: Remove dollar sign from price
+        //TODO: book_condition doesn't work
+        //TODO:
+        print("PostString=\(postString)");
         
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
@@ -71,8 +71,8 @@ class RegisterPageViewController: UIViewController {
         }
         task.resume()
         
-        //Display message w/ confirmation
-        var myAlert = UIAlertController(title:"Registration successful", message:"Thank you", preferredStyle:UIAlertControllerStyle.Alert);
+        //Notification
+        var myAlert = UIAlertController(title:"Book listed", message:"Thank you", preferredStyle:UIAlertControllerStyle.Alert);
         
         let okAction = UIAlertAction(title:"OK", style:UIAlertActionStyle.Default) {
             action in self.dismissViewControllerAnimated(true, completion:nil)
@@ -80,9 +80,9 @@ class RegisterPageViewController: UIViewController {
         
         myAlert.addAction(okAction);
         self.presentViewController(myAlert, animated:true, completion:nil);
-        
     }
-
+    
+    
     func displayAlertMessage(alertMessage:String) {
         let myAlert = UIAlertController(title:"Alert", message:alertMessage, preferredStyle:UIAlertControllerStyle.Alert);
         
@@ -91,4 +91,5 @@ class RegisterPageViewController: UIViewController {
         myAlert.addAction(okAction);
         self.presentViewController(myAlert, animated: true, completion:nil);
     }
+
 }
