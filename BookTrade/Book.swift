@@ -7,3 +7,21 @@
 //
 
 import Foundation
+
+class Book
+{
+    let Name: String
+    let ISBN: Int
+    var SpecBooks = [SpecificBook]()
+    
+    init(N: String, I: Int)
+    {
+        Name = N
+        ISBN = I
+    }
+    
+    func addSpecBook(P: Double, S: Student)
+    {
+        SpecBooks.append(SpecificBook(P: P, S: S))
+    }
+}

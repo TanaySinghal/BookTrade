@@ -7,3 +7,15 @@
 //
 
 import Foundation
+
+class SpecificBook
+{
+    var Price: Double
+    let Stu: Student
+    
+    init(P: Double, S: Student)
+    {
+        Price = P
+        Stu = S
+    }
+}
