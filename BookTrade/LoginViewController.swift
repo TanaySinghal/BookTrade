@@ -86,21 +86,5 @@ class LoginViewController: UIViewController {
         task.resume()
         
         
-        //Old code
-        
-        /*let userEmailStored = NSUserDefaults.standardUserDefaults().stringForKey("userEmail");
-        let userPasswordStored = NSUserDefaults.standardUserDefaults().stringForKey("userPassword");
-        
-        //If these emails and passwords match to database
-        if(userEmail == userEmailStored) {
-            if(userPasswordStored == userPassword) {
-                //Login is successful
-                NSUserDefaults.standardUserDefaults().setBool(true, forKey: "isUserLoggedIn");
-                NSUserDefaults.standardUserDefaults().synchronize();
-                self.dismissViewControllerAnimated(true, completion:nil);
-            }
-        }*/
-        
-        
     }
 }

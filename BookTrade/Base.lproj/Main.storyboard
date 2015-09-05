@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BBb-TN-saC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BBb-TN-saC">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
@@ -18,14 +18,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Protected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7d-wr-Jx5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Protected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7d-wr-Jx5">
                                 <rect key="frame" x="263" y="289" width="75" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="cso-nb-RYk"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geZ-Al-2gu">
+                                <rect key="frame" x="251" y="385" width="99" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="99" id="daA-7I-XeX"/>
+                                </constraints>
+                                <state key="normal" title="Sign out"/>
+                                <connections>
+                                    <action selector="signoutButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VrD-gm-O1J"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="geZ-Al-2gu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4Bt-79-aj3"/>
+                            <constraint firstItem="p7d-wr-Jx5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="BLw-6V-SZo"/>
+                            <constraint firstItem="geZ-Al-2gu" firstAttribute="centerX" secondItem="p7d-wr-Jx5" secondAttribute="centerX" id="kQf-nP-rvj"/>
+                            <constraint firstItem="geZ-Al-2gu" firstAttribute="top" secondItem="p7d-wr-Jx5" secondAttribute="bottom" constant="75" id="rXv-7a-7Lc"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pYK-RT-5Dy"/>
                     <connections>
@@ -34,12 +53,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1138" y="349.99999999999994"/>
+            <point key="canvasLocation" x="1138" y="349"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="olL-E2-qky">
             <objects>
-                <viewController id="vlT-1L-eUI" sceneMemberID="viewController">
+                <viewController id="vlT-1L-eUI" customClass="LoginViewController" customModule="BookTrade" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RaR-Zs-AES"/>
                         <viewControllerLayoutGuide type="bottom" id="zkc-vr-3SV"/>
@@ -107,6 +126,9 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginButtonTapped:" destination="vlT-1L-eUI" eventType="touchUpInside" id="yRU-sS-efC"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UbV-Kg-SNh">
                                 <rect key="frame" x="292" y="387" width="16" height="21"/>
@@ -142,6 +164,10 @@
                         </constraints>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <connections>
+                        <outlet property="userEmailTextField" destination="tHV-ZD-IzR" id="obf-Tc-Bx9"/>
+                        <outlet property="userPasswordTextField" destination="WcL-v5-c33" id="bcS-QA-4nm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gbG-gJ-Idg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -192,19 +218,19 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rn3-cO-xio">
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rn3-cO-xio">
                                 <rect key="frame" x="20" y="244" width="560" height="89"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="89" id="uQp-2l-xEF"/>
                                 </constraints>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smD-HI-1xY">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smD-HI-1xY">
                                 <rect key="frame" x="23" y="341" width="39" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="$" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k2J-fW-Lhc">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="$" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k2J-fW-Lhc">
                                 <rect key="frame" x="20" y="361" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -378,10 +404,10 @@
             </objects>
             <point key="canvasLocation" x="1817" y="-403.99999999999994"/>
         </scene>
-        <!--View Controller-->
+        <!--Register Page View Controller-->
         <scene sceneID="MeJ-kN-3sh">
             <objects>
-                <viewController id="4V0-ek-gOA" sceneMemberID="viewController">
+                <viewController id="4V0-ek-gOA" customClass="RegisterPageViewController" customModule="BookTrade" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VbB-47-aXV"/>
                         <viewControllerLayoutGuide type="bottom" id="Ve1-os-N8P"/>
@@ -421,6 +447,9 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="registerButtonPressed:" destination="4V0-ek-gOA" eventType="touchUpInside" id="Pg6-pg-WhJ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="miE-Xi-X5Y">
                                 <rect key="frame" x="190" y="451" width="220" height="30"/>
@@ -460,6 +489,12 @@
                             <constraint firstItem="miE-Xi-X5Y" firstAttribute="centerX" secondItem="aK3-4t-qC7" secondAttribute="centerX" id="v8k-DI-vdc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="repeatPasswordTextField" destination="APN-u8-iEG" id="hZM-UG-CIP"/>
+                        <outlet property="userEmailTextField" destination="dp8-X6-rWz" id="5DJ-Ga-zeQ"/>
+                        <outlet property="userNameTextField" destination="QY4-71-Gcw" id="lzr-Pc-QXu"/>
+                        <outlet property="userPasswordTextField" destination="laW-93-YhB" id="c0d-Ao-QFy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FtW-Au-BET" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

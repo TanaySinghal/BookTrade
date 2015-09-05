@@ -27,6 +27,8 @@ class RegisterPageViewController: UIViewController {
     }
     
     @IBAction func registerButtonPressed(sender: AnyObject) {
+        print("Pressed register");
+        
         let userEmail = userEmailTextField.text!;
         let userName = userNameTextField.text!;
         let userPassword = userPasswordTextField.text!;
