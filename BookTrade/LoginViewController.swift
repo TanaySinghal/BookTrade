@@ -29,7 +29,49 @@ class LoginViewController: UIViewController {
         let userEmail = userEmailTextField.text;
         let userPassword = userPasswordTextField.text;
         
-        let userEmailStored = NSUserDefaults.standardUserDefaults().stringForKey("userEmail");
+        let url = NSURL(string: "http://localhost:8888/BookTrade/Conn.php")
+        let request = NSMutableURLRequest(URL: url!)
+        
+        // modify the request as necessary, if necessary
+        
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
+            data, response, error in
+            
+            if data == nil {
+                print("request failed \(error)")
+                return
+            }
+            
+            do {
+                if let json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as? [[String:String]] {
+                    let email = json[0]["email"];
+                    let password = json[0]["password"];
+                    
+                    if(userEmail == email) {
+                        if(userPassword == password) {
+                            //Login is successful
+                            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "isUserLoggedIn");
+                            NSUserDefaults.standardUserDefaults().synchronize();
+                            self.dismissViewControllerAnimated(true, completion:nil);
+                        }
+                    }
+                }
+                else {
+                    print("parsing error")
+                    let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                    print("raw response: \(responseString)")
+                }
+            }
+            catch let error as NSError {
+                print("error \(error)")
+            }
+        }
+        task.resume()
+        
+        
+        //Old code
+        
+        /*let userEmailStored = NSUserDefaults.standardUserDefaults().stringForKey("userEmail");
         let userPasswordStored = NSUserDefaults.standardUserDefaults().stringForKey("userPassword");
         
         //If these emails and passwords match to database
@@ -40,18 +82,8 @@ class LoginViewController: UIViewController {
                 NSUserDefaults.standardUserDefaults().synchronize();
                 self.dismissViewControllerAnimated(true, completion:nil);
             }
-        }
+        }*/
         
         
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
