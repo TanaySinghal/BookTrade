@@ -27,10 +27,10 @@ class RegisterPageViewController: UIViewController {
     }
     
     @IBAction func registerButtonPressed(sender: AnyObject) {
-        let userEmail = userEmailTextField.text;
-        let userName = userNameTextField.text;
-        let userPassword = userPasswordTextField.text;
-        let repeatPassword = repeatPasswordTextField.text;
+        let userEmail = userEmailTextField.text!;
+        let userName = userNameTextField.text!;
+        let userPassword = userPasswordTextField.text!;
+        let repeatPassword = repeatPasswordTextField.text!;
         
         //Check for empty fields
         if(userEmail.isEmpty || userName.isEmpty || userPassword.isEmpty || repeatPassword.isEmpty) {
@@ -65,7 +65,7 @@ class RegisterPageViewController: UIViewController {
     }
 
     func displayAlertMessage(alertMessage:String) {
-        var myAlert = UIAlertController(title:"Alert", message:alertMessage, preferredStyle:UIAlertControllerStyle.Alert);
+        let myAlert = UIAlertController(title:"Alert", message:alertMessage, preferredStyle:UIAlertControllerStyle.Alert);
         
         let okAction = UIAlertAction(title:"OK", style:UIAlertActionStyle.Default, handler:nil);
         
