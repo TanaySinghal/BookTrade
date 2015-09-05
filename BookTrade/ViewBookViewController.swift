@@ -22,44 +22,46 @@ class ViewBookViewController: UIViewController {
         super.viewDidLoad()
         
         //TODO: get rest of info from book ID
-        let bookID = "1";
         
-        let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:8888/BuyBook.php")!)
-        request.HTTPMethod = "GET"
+        let findID = "1";
+        var foundIDAtRow:Int = 0;
         
-        let postString = "book_id=" + bookID;
-        print("PostString=\(postString)")
+        let url = NSURL(string: "http://localhost:8888/BookTrade/Books.php")
+        let request = NSMutableURLRequest(URL: url!)
         
-        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+        // modify the request as necessary, if necessary
         
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
             data, response, error in
             
-            if error != nil {
-                print("error=\(error)")
+            if data == nil {
+                print("request failed \(error)")
                 return
             }
+            
             
             do {
                 if let json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as? [[String:String]] {
                     
-                    print("json: \(json)");
                     
-                    let seller_id = json[0]["seller_id"];
-                    let title = json[0]["title"];
-                    let author = json[0]["author"];
-                    let cost = json[0]["cost"];
-                    let isbn = json[0]["isbn"];
-                    let condition = json[0]["book_condition"];
-                    let zipCode = json[0]["zip_code"];
+                    for var i = 0; i < json.count; i++ {
+                        if json[i]["book_id"] == findID {
+                            foundIDAtRow = i;
+                            break;
+                        }
+                    }
                     
-                    print(seller_id);
-                    print(title);
-                    print(author);
-                    print(cost);
-                    print(isbn);
-                    print(condition);
-                    print(zipCode);
+                    print("Checkpoint 1");
+
+                    let seller_id = json[foundIDAtRow]["seller_id"];
+                    let title = json[foundIDAtRow]["title"];
+                    let author = json[foundIDAtRow]["author"];
+                    let cost = json[foundIDAtRow]["cost"];
+                    let isbn = json[foundIDAtRow]["isbn"];
+                    let condition = json[foundIDAtRow]["book_condition"];
+                    let zipCode = json[foundIDAtRow]["zip_code"];
+                    
+                    print("Checkpoint 2");
                     
                     self.bookName.text = title;
                     self.bookAuthor.text = author;
@@ -68,6 +70,8 @@ class ViewBookViewController: UIViewController {
                     self.bookPrice.text = cost;
                     self.bookSeller.text = seller_id;
                     self.bookZipCode.text = zipCode;
+                    
+                    print("Checkpoint 3");
                     
                 }
                 else {
@@ -81,7 +85,6 @@ class ViewBookViewController: UIViewController {
             }
         }
         task.resume()
-        
         // Do any additional setup after loading the view.
     }
 
