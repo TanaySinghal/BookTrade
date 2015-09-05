@@ -63,13 +63,15 @@ class ViewBookViewController: UIViewController {
                     
                     print("Checkpoint 2");
                     
-                    self.bookName.text = title;
-                    self.bookAuthor.text = author;
-                    self.bookISBN.text = isbn;
-                    self.bookCondition.text = condition;
-                    self.bookPrice.text = cost;
-                    self.bookSeller.text = seller_id;
-                    self.bookZipCode.text = zipCode;
+                    dispatch_async(dispatch_get_main_queue()) {
+                        self.bookName.text = title;
+                        self.bookAuthor.text = author;
+                        self.bookISBN.text = isbn;
+                        self.bookCondition.text = condition;
+                        self.bookPrice.text = cost;
+                        self.bookSeller.text = seller_id;
+                        self.bookZipCode.text = zipCode;
+                    }
                     
                     print("Checkpoint 3");
                     
