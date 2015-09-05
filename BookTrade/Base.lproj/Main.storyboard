@@ -22,6 +22,17 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mCb-4m-H79">
+                                <rect key="frame" x="249" y="387" width="102" height="30"/>
+                                <color key="backgroundColor" red="0.74118134469696972" green="0.119328875691814" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Sign out">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="signoutButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eUP-rO-gRP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -34,10 +45,10 @@
             </objects>
             <point key="canvasLocation" x="1138" y="350"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="olL-E2-qky">
             <objects>
-                <viewController id="vlT-1L-eUI" sceneMemberID="viewController">
+                <viewController id="vlT-1L-eUI" customClass="LoginViewController" customModule="BookTrade" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4lV-4i-Uc6"/>
                         <viewControllerLayoutGuide type="bottom" id="g8Y-yK-GkR"/>
@@ -69,6 +80,9 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginButtonTapped:" destination="vlT-1L-eUI" eventType="touchUpInside" id="L5r-5k-IpK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tio-fZ-Sxn">
                                 <rect key="frame" x="239" y="436" width="122" height="30"/>
@@ -91,15 +105,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="userEmailTextField" destination="tHV-ZD-IzR" id="SLA-co-ibB"/>
+                        <outlet property="userPasswordTextField" destination="WcL-v5-c33" id="wJi-yZ-9nO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gbG-gJ-Idg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1827" y="350"/>
         </scene>
-        <!--View Controller-->
+        <!--Register Page View Controller-->
         <scene sceneID="MeJ-kN-3sh">
             <objects>
-                <viewController id="4V0-ek-gOA" sceneMemberID="viewController">
+                <viewController id="4V0-ek-gOA" customClass="RegisterPageViewController" customModule="BookTrade" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tGv-Ts-KLa"/>
                         <viewControllerLayoutGuide type="bottom" id="fWE-4Y-RCR"/>
@@ -141,6 +159,9 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="registerButtonPressed:" destination="4V0-ek-gOA" eventType="touchUpInside" id="gUM-FI-UnS"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="miE-Xi-X5Y">
                                 <rect key="frame" x="190" y="451" width="220" height="30"/>
@@ -151,6 +172,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="repeatPasswordTextField" destination="APN-u8-iEG" id="BU3-vp-h0f"/>
+                        <outlet property="userEmailTextField" destination="dp8-X6-rWz" id="4O3-A0-xM6"/>
+                        <outlet property="userNameTextField" destination="QY4-71-Gcw" id="qco-vn-LdX"/>
+                        <outlet property="userPasswordTextField" destination="laW-93-YhB" id="b4U-sj-gJY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FtW-Au-BET" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

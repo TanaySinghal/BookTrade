@@ -13,6 +13,8 @@
 		8BB1113B1B9AACB500924F1A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BB1113A1B9AACB500924F1A /* Images.xcassets */; };
 		8BB1113E1B9AACB500924F1A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BB1113C1B9AACB500924F1A /* LaunchScreen.xib */; };
 		8BB1114A1B9AACB500924F1A /* BookTradeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB111491B9AACB500924F1A /* BookTradeTests.swift */; };
+		8BB111561B9ABA4E00924F1A /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB111551B9ABA4E00924F1A /* RegisterPageViewController.swift */; };
+		8BB111581B9ABFCA00924F1A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB111571B9ABFCA00924F1A /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		8BB111431B9AACB500924F1A /* BookTradeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookTradeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BB111481B9AACB500924F1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BB111491B9AACB500924F1A /* BookTradeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTradeTests.swift; sourceTree = "<group>"; };
+		8BB111551B9ABA4E00924F1A /* RegisterPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPageViewController.swift; sourceTree = "<group>"; };
+		8BB111571B9ABFCA00924F1A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,8 @@
 				8BB1113A1B9AACB500924F1A /* Images.xcassets */,
 				8BB1113C1B9AACB500924F1A /* LaunchScreen.xib */,
 				8BB111311B9AACB500924F1A /* Supporting Files */,
+				8BB111551B9ABA4E00924F1A /* RegisterPageViewController.swift */,
+				8BB111571B9ABFCA00924F1A /* LoginViewController.swift */,
 			);
 			path = BookTrade;
 			sourceTree = "<group>";
@@ -212,8 +218,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BB111581B9ABFCA00924F1A /* LoginViewController.swift in Sources */,
 				8BB111361B9AACB500924F1A /* ViewController.swift in Sources */,
 				8BB111341B9AACB500924F1A /* AppDelegate.swift in Sources */,
+				8BB111561B9ABA4E00924F1A /* RegisterPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +419,7 @@
 				8BB1114F1B9AACB500924F1A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8BB111501B9AACB500924F1A /* Build configuration list for PBXNativeTarget "BookTradeTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +428,7 @@
 				8BB111521B9AACB500924F1A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
