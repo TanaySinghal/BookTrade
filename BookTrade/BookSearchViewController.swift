@@ -30,7 +30,7 @@ class BookSearchViewController: UIViewController {
         //Pass searchString variable to next view
         
         self.performSegueWithIdentifier("SearchBooks", sender: self)
-        print(searchString);
+        //print(searchString);
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
