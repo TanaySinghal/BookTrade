@@ -17,7 +17,7 @@ class ViewBookViewController: UIViewController {
     @IBOutlet weak var bookPrice: UILabel!
     @IBOutlet weak var bookSeller: UILabel!
     @IBOutlet weak var bookZipCode: UILabel!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
