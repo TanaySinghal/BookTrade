@@ -47,11 +47,15 @@ class LoginViewController: UIViewController {
                     
                     var foundEmail:Bool = false;
                     var password:String = "";
+                    var user_id:String = "";
+                    var currentMoney:String = "";
                     var name:String = "";
                     
                     for row in json {
                         let email = row["email"];
                         password = row["password"]!;
+                        user_id = row["user_id"]!;
+                        currentMoney = row["dollar"]!;
                         if(userEmail == email) {
                             foundEmail = true;
                             name = row["name"]!;
@@ -63,8 +67,13 @@ class LoginViewController: UIViewController {
                         if(userPassword == password) {
                             print("Log in successful!");
                             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "isUserLoggedIn");
+                            NSUserDefaults.standardUserDefaults().setValue(user_id, forKey: "user_id");
                             NSUserDefaults.standardUserDefaults().setValue(name, forKey: "userName");
+                            NSUserDefaults.standardUserDefaults().setValue(currentMoney, forKey: "currentMoney");
                             NSUserDefaults.standardUserDefaults().synchronize();
+                            
+                            //This is how to access...
+                            //NSUserDefaults.standardUserDefaults().valueForKey("userName");
                             
                             //Having errors with this...
                             dispatch_sync(dispatch_get_main_queue()) {

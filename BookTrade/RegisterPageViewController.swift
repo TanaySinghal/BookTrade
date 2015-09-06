@@ -65,14 +65,14 @@ class RegisterPageViewController: UIViewController {
             }
             
             //print("response = \(response)")
-            
-            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+    
+            _ = NSString(data: data!, encoding: NSUTF8StringEncoding)
             //print("responseString = \(responseString)")
         }
         task.resume()
         
         //Display message w/ confirmation
-        var myAlert = UIAlertController(title:"Registration successful", message:"Thank you", preferredStyle:UIAlertControllerStyle.Alert);
+        let myAlert = UIAlertController(title:"Registration successful", message:"Thank you", preferredStyle:UIAlertControllerStyle.Alert);
         
         let okAction = UIAlertAction(title:"OK", style:UIAlertActionStyle.Default) {
             action in self.dismissViewControllerAnimated(true, completion:nil)

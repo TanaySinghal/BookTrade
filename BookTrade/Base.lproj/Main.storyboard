@@ -22,14 +22,14 @@
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
                                     <barButtonItem title="Profile" style="done" id="aCn-2O-2q2"/>
-                                    <barButtonItem title="Book Search" id="8vd-sD-Fh5">
+                                    <barButtonItem title="Search" id="8vd-sD-Fh5">
                                         <connections>
                                             <segue destination="vr7-fa-JYU" kind="popoverPresentation" popoverAnchorBarButtonItem="8vd-sD-Fh5" id="9FC-ck-G11">
                                                 <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                             </segue>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Sell Book" style="done" id="NWe-vD-bpm">
+                                    <barButtonItem title="Sell Book" style="plain" id="NWe-vD-bpm">
                                         <connections>
                                             <segue destination="EUL-0X-2b3" kind="popoverPresentation" popoverAnchorBarButtonItem="NWe-vD-bpm" id="pKq-sY-8BW">
                                                 <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
@@ -60,11 +60,17 @@
                                     <constraint firstAttribute="height" constant="235" id="dMf-Ad-ghp"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Hello! Welcome to my profile page." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MJ0-3d-e5K">
-                                <rect key="frame" x="20" y="297" width="560" height="259"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="Hello! Welcome to my profile page." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MJ0-3d-e5K">
+                                <rect key="frame" x="20" y="297" width="560" height="85"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Money: $" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xPm-GE-8WS">
+                                <rect key="frame" x="20" y="390" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -86,6 +92,7 @@
                     <navigationItem key="navigationItem" id="pYK-RT-5Dy"/>
                     <connections>
                         <outlet property="ProfileTitle" destination="dYf-8X-nEd" id="di7-hc-CIp"/>
+                        <outlet property="money" destination="xPm-GE-8WS" id="8zF-wJ-5vc"/>
                         <segue destination="vlT-1L-eUI" kind="presentation" identifier="loginView" id="BZ9-3y-ffv"/>
                     </connections>
                 </viewController>
@@ -227,14 +234,14 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DRR-CW-Yfi">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
-                                    <barButtonItem title="Profile" style="done" id="7hA-XS-i2m">
+                                    <barButtonItem title="Profile" style="plain" id="7hA-XS-i2m">
                                         <connections>
                                             <segue destination="BYZ-38-t0r" kind="popoverPresentation" popoverAnchorBarButtonItem="7hA-XS-i2m" id="jXB-rt-ohE">
                                                 <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                             </segue>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Book Search" id="Y9M-2G-ppt">
+                                    <barButtonItem title="Search" id="Y9M-2G-ppt">
                                         <connections>
                                             <segue destination="vr7-fa-JYU" kind="popoverPresentation" popoverAnchorBarButtonItem="Y9M-2G-ppt" id="DCA-BX-8Bw">
                                                 <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
@@ -379,13 +386,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j7F-53-TZV">
-                                <rect key="frame" x="224" y="445" width="152" height="30"/>
+                                <rect key="frame" x="224" y="442" width="152" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="152" id="LFA-tA-KZd"/>
-                                    <constraint firstAttribute="height" constant="30" id="ttx-AN-Edp"/>
+                                    <constraint firstAttribute="height" constant="36" id="ttx-AN-Edp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Purchase Book"/>
+                                <state key="normal" title="Rent Book"/>
+                                <connections>
+                                    <action selector="rentButtonPressed:" destination="r1k-zw-34u" eventType="touchUpInside" id="cFX-H2-JF9"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3g-4Z-6UH">
                                 <rect key="frame" x="20" y="273" width="560" height="21"/>
@@ -411,21 +421,21 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bXO-Ze-jbf">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
-                                    <barButtonItem title="Profile" style="done" id="zB8-F9-tC5">
+                                    <barButtonItem title="Profile" style="plain" id="zB8-F9-tC5">
                                         <connections>
                                             <segue destination="BYZ-38-t0r" kind="popoverPresentation" popoverAnchorBarButtonItem="zB8-F9-tC5" id="v2e-Ae-oaW">
                                                 <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                             </segue>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Book Search" id="a0g-aA-5K3">
+                                    <barButtonItem title="Search" style="plain" id="a0g-aA-5K3">
                                         <connections>
                                             <segue destination="vr7-fa-JYU" kind="popoverPresentation" popoverAnchorBarButtonItem="a0g-aA-5K3" id="en2-ND-ibF">
                                                 <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                             </segue>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Sell Book" style="done" id="azP-ph-cPn">
+                                    <barButtonItem title="Sell Book" style="plain" id="azP-ph-cPn">
                                         <connections>
                                             <segue destination="EUL-0X-2b3" kind="popoverPresentation" popoverAnchorBarButtonItem="azP-ph-cPn" id="nMy-hR-eah">
                                                 <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
@@ -464,7 +474,7 @@
                             <constraint firstItem="qiJ-Wn-FeT" firstAttribute="trailing" secondItem="IBv-4Z-JIR" secondAttribute="trailingMargin" id="QOc-v6-vi0"/>
                             <constraint firstItem="qiJ-Wn-FeT" firstAttribute="leading" secondItem="txt-c0-ddI" secondAttribute="leading" id="RtR-Cd-WA0"/>
                             <constraint firstItem="XhF-PA-4JL" firstAttribute="top" secondItem="W3g-4Z-6UH" secondAttribute="bottom" constant="31" id="TQR-bE-G9U"/>
-                            <constraint firstItem="K83-KA-cjb" firstAttribute="top" secondItem="j7F-53-TZV" secondAttribute="bottom" constant="125" id="TV4-rj-97n"/>
+                            <constraint firstItem="K83-KA-cjb" firstAttribute="top" secondItem="j7F-53-TZV" secondAttribute="bottom" constant="122" id="TV4-rj-97n"/>
                             <constraint firstItem="Cl5-Sh-nsS" firstAttribute="top" secondItem="txt-c0-ddI" secondAttribute="bottom" constant="30" id="Vyf-5f-zth"/>
                             <constraint firstItem="bXO-Ze-jbf" firstAttribute="centerX" secondItem="j7F-53-TZV" secondAttribute="centerX" id="WcB-zE-ijO"/>
                             <constraint firstItem="qiJ-Wn-FeT" firstAttribute="top" secondItem="HLo-dv-vT4" secondAttribute="bottom" constant="8" symbolic="YES" id="ZZL-AT-eZQ"/>
@@ -509,15 +519,15 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D7j-La-cpO">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
-                                    <barButtonItem title="Profile" style="done" id="vRP-ys-KCa">
+                                    <barButtonItem title="Profile" style="plain" id="vRP-ys-KCa">
                                         <connections>
                                             <segue destination="BYZ-38-t0r" kind="popoverPresentation" popoverAnchorBarButtonItem="vRP-ys-KCa" id="1HP-HY-zXf">
                                                 <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                             </segue>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Book Search" id="bsn-Og-ucU"/>
-                                    <barButtonItem title="Sell Book" style="done" id="IVW-NB-EvP">
+                                    <barButtonItem title="Search" style="done" id="bsn-Og-ucU"/>
+                                    <barButtonItem title="Sell Book" style="plain" id="IVW-NB-EvP">
                                         <connections>
                                             <segue destination="EUL-0X-2b3" kind="popoverPresentation" popoverAnchorBarButtonItem="IVW-NB-EvP" id="aeN-wB-2id">
                                                 <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
@@ -630,6 +640,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="oPL-hg-zdL" id="JWK-x7-Bke"/>
+                        <segue destination="r1k-zw-34u" kind="show" identifier="ViewBook" id="4IT-bk-0h1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QOi-Xg-z6u" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -759,9 +770,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="BZ9-3y-ffv"/>
+        <segue reference="jXB-rt-ohE"/>
         <segue reference="pKq-sY-8BW"/>
-        <segue reference="9cQ-R7-iR8"/>
-        <segue reference="RJG-a7-1XT"/>
+        <segue reference="QcE-W7-E0F"/>
         <segue reference="9FC-ck-G11"/>
     </inferredMetricsTieBreakers>
 </document>

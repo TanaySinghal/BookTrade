@@ -11,6 +11,9 @@ import UIKit
 class BookListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     var searchInput:String = "";
+    var currentIndexPressed:String = "";
+    
+    var titleList: [String] = [];
     var indexList: [String] = [];
     
     @IBOutlet weak var Text: UILabel!
@@ -22,17 +25,16 @@ class BookListViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        print("Hello \(indexList)")
+        dispatch_async(dispatch_get_main_queue()) {
+            self.tableView.reloadData()
+        }
         
         tableView.delegate = self
         tableView.dataSource = self
         
-        // Look through all book titles and store the ones that contain text
-        
-        //First just list all books/TODO: get rest of info from book ID
-        
         
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -44,30 +46,43 @@ class BookListViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return indexList.count;
+        return titleList.count;
+        //indexList would have same count
     }
     
+    //This method displays each cell
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        //This is for memory purposes
         let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as UITableViewCell
         
         let row = indexPath.row
         
-        //Get
-        
-        cell.textLabel?.text = indexList[row]
-        //indexList[row] as? String
-        
-//        print(indexList[row])
+        cell.textLabel?.text = titleList[row]
         
         return cell
     }
     
     //print out what user taps
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
         let row = indexPath.row
-        print(indexList[row])
+        print("Title is \(titleList[row]) and index is \(indexList[row])")
+        
+        
+        //TODO: Open this book using view book segueway
+        currentIndexPressed = indexList[row];
+        self.performSegueWithIdentifier("ViewBook", sender: self);
+        
     }
-
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "ViewBook") {
+            let theDestination = (segue.destinationViewController as! ViewBookViewController);
+            print(currentIndexPressed);
+            theDestination.findID = currentIndexPressed;
+        }
+    }
     
 
 }

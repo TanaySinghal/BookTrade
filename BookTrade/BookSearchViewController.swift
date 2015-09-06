@@ -25,18 +25,15 @@ class BookSearchViewController: UIViewController {
     }
     
     @IBAction func searchPressed(sender: AnyObject) {
-        let searchString = search.text;
-        
-        //Pass searchString variable to next view
-        
         self.performSegueWithIdentifier("SearchBooks", sender: self)
-        //print(searchString);
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if (segue.identifier == "SearchBooks") {
+            var titleList: [String] = []
             var indexList: [String] = []
+            
             let searchInput = search.text!
             
             let url = NSURL(string: "http://localhost:8888/BookTrade/Books.php")
@@ -58,16 +55,20 @@ class BookSearchViewController: UIViewController {
                             let temp = json[i]["title"]!
                             if temp.lowercaseString.rangeOfString(searchInput) != nil {
                                 //Add row that each thing is on
-                                indexList.append(temp);
+                                titleList.append(temp);
+                                
+                                let temp2 = (json[i]["book_id"]);
+                                indexList.append(temp2!);
                             }
                         }
                         
                         let theDestination = (segue.destinationViewController as! BookListViewController);
                         
+                        theDestination.titleList = titleList;
                         theDestination.indexList = indexList;
-                        print("From another place\(theDestination.indexList)")
+                        print("From another place\(theDestination.titleList)")
                         
-                        for element in indexList {
+                        for element in titleList {
                             print("Found: \(element)");
                         }
                     }
