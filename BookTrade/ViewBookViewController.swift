@@ -17,11 +17,12 @@ class ViewBookViewController: UIViewController {
     @IBOutlet weak var bookPrice: UILabel!
     @IBOutlet weak var bookSeller: UILabel!
     @IBOutlet weak var bookZipCode: UILabel!
-        
+    
+    var currentMoney:Double = 0;
+    var costOfBook:String = "100";
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //TODO: get rest of info from book ID
         
         let findID = "1";
         var foundIDAtRow:Int = 0;
@@ -56,7 +57,7 @@ class ViewBookViewController: UIViewController {
                     let seller_id = json[foundIDAtRow]["seller_id"];
                     let title = json[foundIDAtRow]["title"];
                     let author = json[foundIDAtRow]["author"];
-                    let cost = json[foundIDAtRow]["cost"];
+                    self.costOfBook = json[foundIDAtRow]["cost"]!;
                     let isbn = json[foundIDAtRow]["isbn"];
                     let condition = json[foundIDAtRow]["book_condition"];
                     let zipCode = json[foundIDAtRow]["zip_code"];
@@ -68,7 +69,7 @@ class ViewBookViewController: UIViewController {
                         self.bookAuthor.text = author;
                         self.bookISBN.text = isbn;
                         self.bookCondition.text = condition;
-                        self.bookPrice.text = cost;
+                        self.bookPrice.text = self.costOfBook;
                         self.bookSeller.text = seller_id;
                         self.bookZipCode.text = zipCode;
                     }
@@ -103,16 +104,18 @@ class ViewBookViewController: UIViewController {
         //Sending post request
         let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:8888/BookTrade/BuyBook.php")!)
         request.HTTPMethod = "POST"
-        let moneyTaken = 2
+        
+        let moneyTaken = NSNumberFormatter().numberFromString(costOfBook)!.doubleValue
         
         //Need to get current money and user_id (store in login session or something like that?)
-        let currentMoney = 10
+        let currentMoney = 10.0
         let user_id = "1"
+        
         
         let remainingDollars = "\(currentMoney - moneyTaken)";
         
+        //Sending post request
         let postString = "dollar=" + remainingDollars + "&user_id=" + user_id;
-        
         print("PostString=\(postString)")
         
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
@@ -130,6 +133,10 @@ class ViewBookViewController: UIViewController {
             //print("responseString = \(responseString)")
         }
         task.resume()
+    }
+    
+    func getCurrentMoney() {
+        //TODO: Get current money
     }
 
 }

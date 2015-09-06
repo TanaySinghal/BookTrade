@@ -15,7 +15,6 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
@@ -48,22 +47,30 @@ class LoginViewController: UIViewController {
                     
                     var foundEmail:Bool = false;
                     var password:String = "";
+                    var name:String = "";
                     
                     for row in json {
                         let email = row["email"];
                         password = row["password"]!;
                         if(userEmail == email) {
                             foundEmail = true;
+                            name = row["name"]!;
                             break;
                         }
                     }
                     
                     if foundEmail == true {
                         if(userPassword == password) {
-                            //Login is successful
+                            print("Log in successful!");
                             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "isUserLoggedIn");
+                            NSUserDefaults.standardUserDefaults().setValue(name, forKey: "userName");
                             NSUserDefaults.standardUserDefaults().synchronize();
-                            self.dismissViewControllerAnimated(true, completion:nil);
+                            
+                            //Having errors with this...
+                            dispatch_sync(dispatch_get_main_queue()) {
+                                // place code for main thread here
+                                self.performSegueWithIdentifier("PostLogin", sender: self);
+                            }
                         }
                         else {
                             print("Password not found");

@@ -78,7 +78,7 @@ class SellBookViewController: UIViewController {
         var myAlert = UIAlertController(title:"Book listed", message:"Thank you", preferredStyle:UIAlertControllerStyle.Alert);
         
         let okAction = UIAlertAction(title:"OK", style:UIAlertActionStyle.Default) {
-            //TODO: Move to next page called "ViewBookViewController"
+            //Move to next page
             action in self.performSegueWithIdentifier("TransitionFromSellBook", sender: self);
             //action in
         }

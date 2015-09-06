@@ -23,6 +23,7 @@
 		8BB111581B9ABFCA00924F1A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB111571B9ABFCA00924F1A /* LoginViewController.swift */; };
 		8BE663DD1B9BD66900E6F430 /* BookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE663DC1B9BD66900E6F430 /* BookListViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		8BE663DF1B9BD68300E6F430 /* BookSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE663DE1B9BD68300E6F430 /* BookSearchViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		8BE663E31B9C4C5600E6F430 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE663E21B9C4C5600E6F430 /* ProfileViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		8BB111571B9ABFCA00924F1A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8BE663DC1B9BD66900E6F430 /* BookListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookListViewController.swift; sourceTree = "<group>"; };
 		8BE663DE1B9BD68300E6F430 /* BookSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookSearchViewController.swift; sourceTree = "<group>"; };
+		8BE663E21B9C4C5600E6F430 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				8BB111331B9AACB500924F1A /* AppDelegate.swift */,
 				8BB111351B9AACB500924F1A /* ViewController.swift */,
 				8BB111371B9AACB500924F1A /* Main.storyboard */,
+				8BE663E21B9C4C5600E6F430 /* ProfileViewController.swift */,
 				8BE663DC1B9BD66900E6F430 /* BookListViewController.swift */,
 				8B807DF91B9B748F00917BA6 /* ViewBookViewController.swift */,
 				8BB1113A1B9AACB500924F1A /* Images.xcassets */,
@@ -263,6 +266,7 @@
 				8BE663DD1B9BD66900E6F430 /* BookListViewController.swift in Sources */,
 				18EA84391B9B17D100D417EE /* Book.swift in Sources */,
 				8BB111561B9ABA4E00924F1A /* RegisterPageViewController.swift in Sources */,
+				8BE663E31B9C4C5600E6F430 /* ProfileViewController.swift in Sources */,
 				18EA843A1B9B17D100D417EE /* Bookbase.swift in Sources */,
 				18EA843C1B9B17D100D417EE /* Student.swift in Sources */,
 			);

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BookTrade/LoginViewController.swift"
-            timestampString = "463157117.743295"
+            timestampString = "463229672.089327"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "loginButtonTapped(_:)"
             landmarkType = "5">
          </BreakpointContent>
