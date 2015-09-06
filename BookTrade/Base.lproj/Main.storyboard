@@ -467,10 +467,10 @@
             </objects>
             <point key="canvasLocation" x="926" y="1170"/>
         </scene>
-        <!--View Controller-->
+        <!--Book Search View Controller-->
         <scene sceneID="93I-HT-Rg9">
             <objects>
-                <viewController id="vr7-fa-JYU" sceneMemberID="viewController">
+                <viewController id="vr7-fa-JYU" customClass="BookSearchViewController" customModule="BookTrade" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="g49-2H-VFg"/>
                         <viewControllerLayoutGuide type="bottom" id="4tn-mf-iuf"/>
@@ -486,6 +486,9 @@
                                     <constraint firstAttribute="height" constant="50" id="ywh-gp-1St"/>
                                 </constraints>
                                 <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="searchPressed:" destination="vr7-fa-JYU" eventType="touchUpInside" id="iQ4-1h-pT7"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qzy-Lm-iZw">
                                 <rect key="frame" x="150" y="206" width="300" height="30"/>
@@ -517,15 +520,19 @@
                             <constraint firstItem="4tn-mf-iuf" firstAttribute="top" secondItem="4jj-OL-BfT" secondAttribute="bottom" constant="270" id="pRb-IH-Qlz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="search" destination="qzy-Lm-iZw" id="cwP-MP-BWZ"/>
+                        <segue destination="Toe-it-hq7" kind="show" identifier="SearchBooks" id="g9q-kx-NUA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="egQ-Lv-n2a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1604" y="1156"/>
         </scene>
-        <!--View Controller-->
+        <!--Book List View Controller-->
         <scene sceneID="fFn-PL-OFL">
             <objects>
-                <viewController id="Toe-it-hq7" sceneMemberID="viewController">
+                <viewController id="Toe-it-hq7" customClass="BookListViewController" customModule="BookTrade" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0na-jX-oxd"/>
                         <viewControllerLayoutGuide type="bottom" id="5Kf-e1-y5H"/>
@@ -535,7 +542,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="List of Books" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OOI-lZ-DGY">
-                                <rect key="frame" x="251" y="45" width="99" height="21"/>
+                                <rect key="frame" x="251" y="289" width="99" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -544,10 +551,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="OOI-lZ-DGY" firstAttribute="centerX" secondItem="izM-eR-iRV" secondAttribute="centerX" id="t4n-gN-qHK"/>
-                            <constraint firstItem="OOI-lZ-DGY" firstAttribute="top" secondItem="0na-jX-oxd" secondAttribute="bottom" constant="25" id="tEt-Iw-u8w"/>
-                            <constraint firstItem="5Kf-e1-y5H" firstAttribute="top" secondItem="OOI-lZ-DGY" secondAttribute="bottom" constant="534" id="ttd-e8-pNg"/>
+                            <constraint firstItem="OOI-lZ-DGY" firstAttribute="top" secondItem="0na-jX-oxd" secondAttribute="bottom" constant="269" id="tEt-Iw-u8w"/>
+                            <constraint firstItem="5Kf-e1-y5H" firstAttribute="top" secondItem="OOI-lZ-DGY" secondAttribute="bottom" constant="290" id="ttd-e8-pNg"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="Text" destination="OOI-lZ-DGY" id="hBn-bq-5Q1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QOi-Xg-z6u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -669,6 +679,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="GsT-mp-e2B"/>
+        <segue reference="QcE-W7-E0F"/>
     </inferredMetricsTieBreakers>
 </document>

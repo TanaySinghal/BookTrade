@@ -21,6 +21,8 @@
 		8BB1114A1B9AACB500924F1A /* BookTradeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB111491B9AACB500924F1A /* BookTradeTests.swift */; };
 		8BB111561B9ABA4E00924F1A /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB111551B9ABA4E00924F1A /* RegisterPageViewController.swift */; };
 		8BB111581B9ABFCA00924F1A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB111571B9ABFCA00924F1A /* LoginViewController.swift */; };
+		8BE663DD1B9BD66900E6F430 /* BookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE663DC1B9BD66900E6F430 /* BookListViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		8BE663DF1B9BD68300E6F430 /* BookSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE663DE1B9BD68300E6F430 /* BookSearchViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		8BB111491B9AACB500924F1A /* BookTradeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTradeTests.swift; sourceTree = "<group>"; };
 		8BB111551B9ABA4E00924F1A /* RegisterPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPageViewController.swift; sourceTree = "<group>"; };
 		8BB111571B9ABFCA00924F1A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8BE663DC1B9BD66900E6F430 /* BookListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookListViewController.swift; sourceTree = "<group>"; };
+		8BE663DE1B9BD68300E6F430 /* BookSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookSearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,7 @@
 				8BB111331B9AACB500924F1A /* AppDelegate.swift */,
 				8BB111351B9AACB500924F1A /* ViewController.swift */,
 				8BB111371B9AACB500924F1A /* Main.storyboard */,
+				8BE663DC1B9BD66900E6F430 /* BookListViewController.swift */,
 				8B807DF91B9B748F00917BA6 /* ViewBookViewController.swift */,
 				8BB1113A1B9AACB500924F1A /* Images.xcassets */,
 				8BB1113C1B9AACB500924F1A /* LaunchScreen.xib */,
@@ -115,6 +120,7 @@
 				8BB111551B9ABA4E00924F1A /* RegisterPageViewController.swift */,
 				8BB111571B9ABFCA00924F1A /* LoginViewController.swift */,
 				8B807DF71B9B611300917BA6 /* SellBookViewController.swift */,
+				8BE663DE1B9BD68300E6F430 /* BookSearchViewController.swift */,
 			);
 			path = BookTrade;
 			sourceTree = "<group>";
@@ -195,6 +201,7 @@
 				TargetAttributes = {
 					8BB1112D1B9AACB500924F1A = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = SZ99M8AW2G;
 					};
 					8BB111421B9AACB500924F1A = {
 						CreatedOnToolsVersion = 6.3;
@@ -247,11 +254,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BB111581B9ABFCA00924F1A /* LoginViewController.swift in Sources */,
+				8BE663DF1B9BD68300E6F430 /* BookSearchViewController.swift in Sources */,
 				8B807DF81B9B611300917BA6 /* SellBookViewController.swift in Sources */,
 				8B807DFA1B9B748F00917BA6 /* ViewBookViewController.swift in Sources */,
 				8BB111361B9AACB500924F1A /* ViewController.swift in Sources */,
 				8BB111341B9AACB500924F1A /* AppDelegate.swift in Sources */,
 				18EA843B1B9B17D100D417EE /* SpecificBook.swift in Sources */,
+				8BE663DD1B9BD66900E6F430 /* BookListViewController.swift in Sources */,
 				18EA84391B9B17D100D417EE /* Book.swift in Sources */,
 				8BB111561B9ABA4E00924F1A /* RegisterPageViewController.swift in Sources */,
 				18EA843A1B9B17D100D417EE /* Bookbase.swift in Sources */,
@@ -385,10 +394,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BookTrade/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "OTCJ.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = OTCJTeamBooks.BookTrade;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -396,10 +408,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BookTrade/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "OTCJ.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = OTCJTeamBooks.BookTrade;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
