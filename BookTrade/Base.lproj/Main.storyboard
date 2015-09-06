@@ -392,7 +392,7 @@
                                     <constraint firstAttribute="height" constant="36" id="ttx-AN-Edp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Rent Book"/>
+                                <state key="normal" title="Buy Book"/>
                                 <connections>
                                     <action selector="rentButtonPressed:" destination="r1k-zw-34u" eventType="touchUpInside" id="cFX-H2-JF9"/>
                                 </connections>
@@ -771,9 +771,9 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="BZ9-3y-ffv"/>
-        <segue reference="jXB-rt-ohE"/>
-        <segue reference="pKq-sY-8BW"/>
+        <segue reference="v2e-Ae-oaW"/>
         <segue reference="QcE-W7-E0F"/>
-        <segue reference="9FC-ck-G11"/>
+        <segue reference="nMy-hR-eah"/>
+        <segue reference="en2-ND-ibF"/>
     </inferredMetricsTieBreakers>
 </document>
