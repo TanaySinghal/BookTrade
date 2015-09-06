@@ -17,3 +17,5 @@ Planned features
 - Better UI/visuals and images
 
 We plan to continue working on this app after PennApps.
+
+NOTE: Currently requires local mysql server and php files to work.
