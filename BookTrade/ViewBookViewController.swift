@@ -95,15 +95,41 @@ class ViewBookViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    //TODO: Connect this function to button
+    func buyButtonPressed() {
+        //Keep track of current user
+        //If current user presses button, deduct money and update database
+        //Sending post request
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:8888/BookTrade/BuyBook.php")!)
+        request.HTTPMethod = "POST"
+        let moneyTaken = 2
+        
+        //Need to get current money and user_id (store in login session or something like that?)
+        let currentMoney = 10
+        let user_id = "1"
+        
+        let remainingDollars = "\(currentMoney - moneyTaken)";
+        
+        let postString = "dollar=" + remainingDollars + "&user_id=" + user_id;
+        
+        print("PostString=\(postString)")
+        
+        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
+            data, response, error in
+            
+            if error != nil {
+                print("error=\(error)")
+                return
+            }
+            
+            //print("response = \(response)")
+            
+            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+            //print("responseString = \(responseString)")
+        }
+        task.resume()
     }
-    */
 
 }
